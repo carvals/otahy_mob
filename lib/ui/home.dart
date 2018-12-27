@@ -68,17 +68,7 @@ class _HomeState extends State<Home> {
 
     ),
     ),
-    bottomNavigationBar: new SafeArea(
-      bottom: false,
-      left: true,
-      minimum: EdgeInsets.fromLTRB(20, 0, 20, 10),
-      child: new Row(
-      children: <Widget>[
-        new Text('data'),
-        new ButtonBar(children: <Widget>[new Text('data')],)
-      ],
-    ),
-    ),
+   
     body: new ListView.builder(
       itemCount: _homeCardList.length,
       itemBuilder: (BuildContext context, int position){
@@ -97,6 +87,7 @@ class _HomeState extends State<Home> {
                 child: new Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                  children: <Widget>[
+                   new Padding(padding: EdgeInsets.all(3),),
                    new CircleAvatar(
                   radius: 20.0,
                   child:  new Image.network(_tempCard.avatarUrl)
