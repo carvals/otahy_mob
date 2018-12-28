@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import '../model/home_card_model.dart';
+import '../ui/select_item.dart';
 
 
 class Home extends StatefulWidget {
@@ -59,7 +60,7 @@ class _HomeState extends State<Home> {
       ),
     drawer: new Drawer(),
     floatingActionButton: new FloatingActionButton(
-      onPressed: () => debugPrint('action pressed'),
+      onPressed: () => showAddItemForm(context),
       backgroundColor: Colors.amber,
       child: new Text('+',
       style: new TextStyle(
@@ -151,5 +152,31 @@ class _HomeState extends State<Home> {
       
     
     );
+
+
+
+
   }
+void showAddItemForm(BuildContext context) async{
+  Map resulTask = await Navigator.of(context).push(
+    MaterialPageRoute<Map>(builder: (BuildContext context)
+    => new SelectItemForm())
+ ); // end push
+
+  //do someting when task come back
+    if(resulTask != null && resulTask.containsKey("taskname"))
+    {
+    //   print(resulTask["taskname"].toString());
+    //   print(resulTask["duedate"].toString());
+    // notoModel.NoToDoModel _user =  notoModel.NoToDoModel.map(resulTask);
+    // print('print after cast: ${_user.taskname}');
+    
+    
+    // print("This is a " +resulTask["${ni.Database.taskName}"]);
+
+    // widget.noToDo.add(_user);
+
+    }
+}
+
 }
