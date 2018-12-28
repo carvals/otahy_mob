@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'add_shop.dart';
 
 
 class SelectItemForm extends StatefulWidget {
@@ -57,7 +58,7 @@ Card makeDashboardItem(String title, IconData icon, CardType cardType) {
                   break;
                   
                   case CardType.Shop:
-                  debugPrint("shop");
+                  showAddShopForm(context, 'store');
                   break;
 
                 }
@@ -85,6 +86,21 @@ Card makeDashboardItem(String title, IconData icon, CardType cardType) {
           ),
         ));
   }
+//route
+void showAddShopForm(BuildContext context, String store) async{
+  Map resulTask = await Navigator.of(context).push(
+    MaterialPageRoute<Map>(builder: (BuildContext context)
+    => new AddShop())
+ ); // end push
+
+  //do someting when task come back
+    if(resulTask != null && resulTask.containsKey("taskname"))
+    {
+    
+
+    }
+}
+
 
   
 }
