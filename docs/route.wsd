@@ -1,0 +1,31 @@
+@startuml
+scale 350 width
+
+
+state HomeScreen {
+  
+  [*] --> FloatingBtn
+  [*] --> LoadCards
+  FloatingBtn-->Shop
+  FloatingBtn-->Event
+  Shop --> AddShop : Route:Push
+  AddShop --> FloatingBtn: Shop:Pop1
+  FloatingBtn -->LoadCards: Route:Pop2
+  
+}
+
+state AddShop {
+  [*] --> LoadForm
+  LoadForm --> FillForm : desc
+  FillForm --> SaveForm
+  
+   state FillForm {
+	 TakePicture->FillDescription
+   FillDescription->AddGps
+   AddGps->AddProperties
+
+  }
+  
+}
+
+@enduml
