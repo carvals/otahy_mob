@@ -44,7 +44,7 @@ class _HomeState extends State<Home> {
                 fontSize: 22.2,
               ),
               decoration: new InputDecoration(
-                hintText: 'Search',
+                hintText: 'Sego',
                 hintStyle: new TextStyle(
                   color: Colors.white,
                 ),
