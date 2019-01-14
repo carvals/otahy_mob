@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'add_shop.dart';
+import 'show_movie.dart';
 
 
 class SelectItemForm extends StatefulWidget {
@@ -54,7 +55,7 @@ Card makeDashboardItem(String title, IconData icon, CardType cardType) {
                   break;
 
                   case CardType.Services:
-                  debugPrint("services");
+                  showMovieForm(context, 'Services' );
                   break;
                   
                   case CardType.Shop:
@@ -100,6 +101,15 @@ void showAddShopForm(BuildContext context, String store) async{
 
     }
 }
+
+void showMovieForm(BuildContext context, String store) async{
+  Map resulTask = await Navigator.of(context).push(
+    MaterialPageRoute<Map>(builder: (BuildContext context)
+    => new ShowMovie())
+ ); // end push
+
+}
+
 
 
   
